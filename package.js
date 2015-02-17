@@ -1,14 +1,20 @@
 Package.describe({
-  name: 'meteoric:ionicons-sass',
-  summary: "Ionic's Ionicons library in SASS and bundled for Meteor.",
+  name: 'koolaid1551:ionicons-stylus',
+  summary: "Ionic's Ionicons library in Stylus and bundled for Meteor.",
   version: '0.1.6',
-  git: 'https://github.com/meteoric/ionicons-sass'
+  git: 'https://github.com/koolaid1551/ionicons-stylus'
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('1.0');
-  api.use("fourseven:scss@2.0.0", ["server"]);
-  api.imply("fourseven:scss", ["server"]);
+  //disabled versionsFrom for now - causing trouble on windows
+  //api.versionsFrom('1.0');
+  
+  //api.use("stylus", ["server"]);
+  //api.imply("stylus", ["server"]);
+  //using s-jeet since the stylus package is currently out of date
+  //https://github.com/meteor/meteor/pull/3749
+  api.use("juliancwirko:s-jeet", ["server"]);
+  api.imply("juliancwirko:s-jeet", ["server"]);
 
   api.addFiles([
     'fonts/ionicons.eot',
@@ -18,11 +24,11 @@ Package.onUse(function(api) {
   ], 'client');
 
   api.addFiles([
-    'stylesheets/_ionicons-animation.scss',
-    'stylesheets/_ionicons-font.scss',
-    'stylesheets/_ionicons-icons.scss',
-    'stylesheets/_ionicons-variables.scss'
+    'stylus/_ionicons-animation.styl',
+    'stylus/_ionicons-font.styl',
+    'stylus/_ionicons-icons.styl',
+    'stylus/_ionicons-variables.styl'
   ], 'server');
 
-  api.addFiles('_ionicons.scss', 'server');
+  api.addFiles('_ionicons.styl', 'server');
 });

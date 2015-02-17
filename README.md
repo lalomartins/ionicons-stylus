@@ -1,20 +1,21 @@
 ![](http://f.cl.ly/items/391y4708420P0H001k1G/meteoric.png)
 
-# ionicons-sass
+# ionicons-stylus
 
-[Ionic](http://ionicframework.com/)'s [Ionicons](http://ionicons.com/) library in SASS and bundled for Meteor. Currently up to date with version `2.0.0`.
+[Ionic](http://ionicframework.com/)'s [Ionicons](http://ionicons.com/) library in Stylus and bundled for Meteor. Currently up to date with version `2.0.0`.
 
 ## Installation
 
+Using juliancwirko:s-jeet since the stylus package is currently out of date, see https://github.com/meteor/meteor/pull/3749
 ```
-meteor add fourseven:scss
-meteor add meteoric:ionicons-sass
+meteor add juliancwirko:s-jeet
+meteor add koolaid1551:ionicons-stylus
 ```
 
-Then in your app's `.scss` file:
+Then in your app's `.styl` file:
 
 ```
-@import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/ionicons';
+@import '.meteor/local/build/programs/server/assets/packages/koolaid1551_ionicons-stylus/ionicons';
 ```
 
 **NOTE:**
